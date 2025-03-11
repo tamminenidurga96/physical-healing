@@ -1,0 +1,40 @@
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slider {
+    display: flex;
+    gap: 10px;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .left .slider {
+    animation: slide-left 6s linear infinite;
+  }
+  
+  .right .slider {
+    animation: slide-right 6s linear infinite;
+  }
+  
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes slide-right {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  

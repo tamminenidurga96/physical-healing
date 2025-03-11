@@ -1,0 +1,16 @@
+/* App.css or global.css (depending on your project structure) */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #A8E6CF; /* Soft Mint Green or any color you choose */
+  font-family: Arial, sans-serif;
+  color: #333; /* Ensures text contrast with background */
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+}
