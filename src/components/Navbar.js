@@ -61,7 +61,7 @@ const styles = {
   navLink: {
     textDecoration: "none",
     fontSize: "18px",
-    color: "#fff",
+    color: "white",
     transition: "0.3s",
     fontWeight: "bold",
     padding: "10px",
