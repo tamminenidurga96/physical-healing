@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav style={styles.navbar}>
       <div style={styles.logoContainer}>
         <img src="/images/img.png" alt="Physical Healing" style={styles.logo} />
         <span style={styles.brandName}>Physical Healing</span>
       </div>
-      <ul style={styles.navLinks}>
+      
+      {/* Hamburger Menu for Mobile */}
+      <div style={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+
+      <ul style={{ ...styles.navLinks, display: menuOpen ? "flex" : "none" }}>
         <li><a href="#home" style={styles.navLink}>Home</a></li>
         <li><a href="#services" style={styles.navLink}>Services</a></li>
         <li><a href="#doctors" style={styles.navLink}>Doctors</a></li>
@@ -23,14 +31,13 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "15px 30px",
+    padding: "15px 20px",
     backgroundColor: "#000000",
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
     position: "fixed",
     width: "100%",
     top: 0,
     zIndex: 1000,
-    flexWrap: "wrap",
   },
   logoContainer: {
     display: "flex",
@@ -49,8 +56,7 @@ const styles = {
     listStyle: "none",
     display: "flex",
     gap: "20px",
-    marginLeft: "auto", // Pushes items to the right
-    flexWrap: "wrap", // Prevents overlapping
+    marginLeft: "auto",
   },
   navLink: {
     textDecoration: "none",
@@ -58,26 +64,32 @@ const styles = {
     color: "#fff",
     transition: "0.3s",
     fontWeight: "bold",
-    padding: "10px", // Adds spacing
+    padding: "10px",
   },
-};
+  hamburger: {
+    fontSize: "30px",
+    color: "#fff",
+    cursor: "pointer",
+    display: "none", // Hidden by default on larger screens
+  },
 
-// Responsive Styles
-const mediaQuery = `
-  @media (max-width: 768px) {
-    .navLinks {
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-      width: 100%;
-      padding-top: 10px;
+  /* Mobile Styles */
+  '@media (max-width: 768px)': {
+    navLinks: {
+      flexDirection: "column",
+      alignItems: "center",
+      position: "absolute",
+      top: "60px",
+      left: 0,
+      width: "100%",
+      backgroundColor: "#000",
+      padding: "10px 0",
+      display: "none", // Hidden by default
+    },
+    hamburger: {
+      display: "block",
     }
   }
-`;
-
-// Injecting styles dynamically for media queries
-const styleSheet = document.createElement("style");
-styleSheet.innerText = mediaQuery;
-document.head.appendChild(styleSheet);
+};
 
 export default Navbar;
