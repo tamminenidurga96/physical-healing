@@ -7,7 +7,7 @@ const painData = [
     { image: "/images/shoulder_pain.png", title: "Shoulder Pain", description: "Discomfort in the shoulder joint, possibly caused by injury or arthritis." },
     { image: "/images/lower_back_pain.png", title: "Lower Back Pain", description: "Pain in the lower back, commonly caused by strain, injury, or spinal conditions." },
     { image: "/images/hip_pain.png", title: "Hip Pain", description: "Pain around the hip joint, which can be caused by arthritis or injury." },
-    { image: "/images/knee_pain.png", title: "Knee Pain", description: "Pain in the knee, often due to overuse, injury, or joint conditions like arthritis." }
+    { image: "/images/Knee_pain.png", title: "Knee Pain", description: "Pain in the knee, often due to overuse, injury, or joint conditions like arthritis." }
   ];
   
 
