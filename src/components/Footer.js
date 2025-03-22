@@ -27,14 +27,14 @@ function Footer() {
 
       {/* Contact Details */}
       <p>
-        <FaWhatsapp style={iconStyle} /> +0000000000
-        <FaPhone style={iconStyle} /> +0000000000
+        <FaWhatsapp style={iconStyle} /> +7981415607
+        <FaPhone style={iconStyle} /> +7981415607
       </p>
 
       {/* Instagram Link */}
       <p>
         <a
-          href="https://www.instagram.com/your_instagram_page"
+          href="https://www.instagram.com/physicalhealing86/ "
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "white", textDecoration: "none" }}
