@@ -24,7 +24,7 @@ const Hero = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const response = await fetch("https://inno-tuitions-backend-production-05e1.up.railway.app/appointments", { 
+      const response = await fetch("inno-tuitions-backend-production-387c.up.railway.app/appointments", { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
