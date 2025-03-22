@@ -24,16 +24,22 @@ const Hero = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const response = await fetch("http://localhost:5000/book-appointment", {
+      const response = await fetch("http://localhost:8080/appointments", { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        throw new Error("Failed to book appointment");
+      }
+
       const data = await response.json();
       setMessage(data.message);
+
       setTimeout(() => {
-        setIsOpen(false); // Auto-close the form after successful submission
-        setMessage(""); // Clear the message
+        setIsOpen(false);
+        setMessage("");
         setFormData({
           name: "",
           age: "",
@@ -53,7 +59,9 @@ const Hero = () => {
 
   return (
     <div className="hero-container">
-      <h1 className="hero-heading">Your Wellness, Our Priority! <br /> Book a Physiotherapy Session Today</h1>
+      <h1 className="hero-heading">
+        Your Wellness, Our Priority! <br /> Book a Physiotherapy Session Today
+      </h1>
       <button className="open-form-button" onClick={() => setIsOpen(true)}>
         Book Appointment
       </button>
