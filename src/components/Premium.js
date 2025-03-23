@@ -18,11 +18,7 @@ const Premium = () => {
       title: "Fitness & Wellness Programs",
       description: "Personalized fitness routines, yoga sessions, and wellness therapies for holistic recovery.",
     },
-    {
-      icon: "🧘",
-      title: "Spa & Relaxation Therapy",
-      description: "Access to spa services like massages, hydrotherapy, and relaxation treatments.",
-    },
+    
     {
       icon: "🌿",
       title: "Nature Therapy",
